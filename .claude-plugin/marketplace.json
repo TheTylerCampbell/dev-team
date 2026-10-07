@@ -1,0 +1,14 @@
+{
+  "name": "dev-team",
+  "description": "Tyler Campbell's dev-team plugin: a multi-agent development team for Claude Code.",
+  "owner": {
+    "name": "Tyler Campbell"
+  },
+  "plugins": [
+    {
+      "name": "dev-team",
+      "source": "./",
+      "description": "A multi-agent development team: orchestrator skill plus planner, implementer, reviewer, tester, debugger and explorer subagents, parallel workflows, a token profile and a TASKS.md ledger."
+    }
+  ]
+}

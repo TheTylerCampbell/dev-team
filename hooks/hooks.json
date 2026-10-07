@@ -1,0 +1,16 @@
+{
+  "description": "Announces the dev-team token profile and team size to the session so the orchestrator dispatches with the right models, effort and parallel width.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sh \"${CLAUDE_PLUGIN_ROOT}/hooks/session-start.sh\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}

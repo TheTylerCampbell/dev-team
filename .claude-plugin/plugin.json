@@ -1,0 +1,42 @@
+{
+  "name": "dev-team",
+  "version": "2.0.0",
+  "description": "A multi-agent development team for Claude Code: an orchestrator skill that plans, builds, reviews, tests and debugs through specialist subagents, with parallel fan-out through workflows, a token profile you choose, and work tracked in TASKS.md.",
+  "author": {
+    "name": "Tyler Campbell"
+  },
+  "repository": "https://github.com/TheTylerCampbell/dev-team",
+  "license": "MIT",
+  "keywords": [
+    "agents",
+    "orchestration",
+    "workflow",
+    "code-review",
+    "testing",
+    "debugging",
+    "planning",
+    "multi-agent"
+  ],
+  "userConfig": {
+    "profile": {
+      "type": "string",
+      "title": "Token profile",
+      "description": "How much model capability and reasoning effort the team spends. economy routes mechanical work to Sonnet at low effort and keeps verification to one vote; balanced inherits the session model with effort set per role; quality runs every role at the session model and maximum effort with a planning panel and a three-vote review.",
+      "default": "balanced",
+      "options": ["economy", "balanced", "quality"]
+    },
+    "fanout": {
+      "type": "string",
+      "title": "Team size",
+      "description": "How many agents the orchestrator runs at once. small keeps to two parallel agents and two review lenses; standard allows four and four; large allows eight parallel agents and six review lenses. Workflows are also capped by the Dynamic workflow size setting in /config.",
+      "default": "standard",
+      "options": ["small", "standard", "large"]
+    },
+    "tracker": {
+      "type": "boolean",
+      "title": "Maintain TASKS.md",
+      "description": "Keep a TASKS.md ledger at the project root, updated by the plugin's tasks.py script at every state change. Turn off for throwaway work.",
+      "default": true
+    }
+  }
+}
